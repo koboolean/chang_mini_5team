@@ -1,29 +1,34 @@
-/// Copyright 2022. ⓒ DevStory.co.kr All rights reserved.
+import 'package:flutter/material.dart';
+import 'package:flutter_toss/pages/splash_page.dart';
+import 'package:flutter_toss/servies/bank_service.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter/material.dart'; // Material 위젯 가져오기
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  print("1. 시작");
-  runApp(const MyApp()); // MyApp 위젯으로 Flutter 시작!
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BankService(prefs)),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    print("2. build 호출 됨");
-
-    // 화면에 보여지는 영역
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            "hello Stateless Widget",
-            style: TextStyle(fontSize: 35),
-          ),
-        ),
-      ),
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      home: SplashPage(),
     );
   }
 }
