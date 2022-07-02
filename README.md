@@ -1,5 +1,5 @@
 _# Flutter - TOSS
-test test test test test
+
 창업 부트캠프 6주차 - 토스 앱 기능(기초) 만들어보기 
 
 ---
@@ -8,9 +8,8 @@ test test test test test
 
 창업 부트캠프{창} Mini Project By 6Team
 
-Flutter version - 
+Flutter version - Version Update
 
-Version Update
 ```
 flutter --version
 flutter channel master
@@ -23,8 +22,6 @@ flutter upgrade
 1. Splash 화면 (SplashPage)
 
 > 앱의 로고를 보여주고, 일정 시간 후 홈 화면으로 넘어갑니다.
-
-TEST
 
 2. 메인 Home 화면 (HomePage)
 
