@@ -24,6 +24,7 @@ flutter upgrade
 
 > 앱의 로고를 보여주고, 일정 시간 후 홈 화면으로 넘어갑니다.
 
+TEST
 
 2. 메인 Home 화면 (HomePage)
 
